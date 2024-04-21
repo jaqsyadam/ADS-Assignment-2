@@ -53,11 +53,6 @@ public class MyLinkedList<E> implements MyList<E> {
     }
 
     @Override
-    public void add(E element) {
-        add(size, element);
-    }
-
-    @Override
     public void add(int index, E element) { //add new element to specific index by creating new node
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("Index out of bounds");
