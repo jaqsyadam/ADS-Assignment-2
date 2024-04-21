@@ -7,4 +7,12 @@ public class MyArrayList<E> implements MyList<E> {
         elements = new Object[default_capacity];
         size = 0;
     }
+    private void capacityCheck(int minCapacity) {
+        if (minCapacity > elements.length) {
+            int newCapacity = Math.max(minCapacity, elements.length * 2);
+            Object[] newElements = new Object[newCapacity];
+            System.arraycopy(elements, 0, newElements, 0, size);
+            elements = newElements;
+        }
+    }
 }
